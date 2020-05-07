@@ -9,6 +9,7 @@ I found myself making this from scratch way too many times so here goes...
 * [morgan for logging](https://www.npmjs.com/package/morgan)
 * [cookieparser](https://www.npmjs.com/package/cookieparser)
 * [body-parser](https://www.npmjs.com/package/body-parser)
+* [dotenv](https://www.npmjs.com/package/dotenv)
  
 # Installation
     git clone https://github.com/tusharpandey13/minimal-node-express-api-boilerplate.git && cd minimal-node-express-api-boilerplate
