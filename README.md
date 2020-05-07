@@ -1,5 +1,6 @@
 # minimal-node-express-api-boilerplate
 A minimal api boilerplate using node.js and express.js
+
 I found myself making this from scratch way too many times so here goes...
 
 # Features
