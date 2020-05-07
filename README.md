@@ -3,7 +3,7 @@ A minimal api boilerplate using node.js and express.js
 I found myself making this from scratch way too many times so here goes...
 
 # Features
-* quite minimal but still has a bunch of usefull stuff
+* quite minimal but still has a bunch of useful stuff
 * [cors](https://www.npmjs.com/package/cors)
 * [nodemon](https://www.npmjs.com/package/nodemon)
 * [morgan for logging](https://www.npmjs.com/package/morgan)
