@@ -4,9 +4,17 @@ var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
 
+var logger = require('../utils/logger.js');
+var errorHandler = require('../middlewares/errorHandler.js');
+
 //   Get port from environment and store in Express.
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+
+// Error Middleware
+app.use(errorHandler.notFound);
+app.use(errorHandler.genericErrorHandler);
+app.use(errorHandler.methodNotAllowed);
 
 // Create HTTP server.
 console.log('started on', port);
@@ -16,6 +24,18 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+// Catch unhandled rejections
+process.on('unhandledRejection', (err) => {
+	logger.log.error('Unhandled rejection', err);
+	process.exit(1);
+});
+
+// Catch uncaught exceptions
+process.on('uncaughtException', (err) => {
+	logger.log.error('Uncaught exception', err);
+	process.exit(1);
+});
 
 // Normalize a port into a number, string, or false.
 function normalizePort(val) {
@@ -58,6 +78,7 @@ function onError(error) {
 }
 
 // Event listener for HTTP server "listening" event.
+// print stuff
 function onListening() {
 	var addr = server.address();
 	var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;

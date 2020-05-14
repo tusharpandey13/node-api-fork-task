@@ -1,34 +1,40 @@
-var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
 var cors = require('cors');
 var morgan = require('morgan');
 var dotenv = require('dotenv');
+var helmet = require('helmet');
+var express = require('express');
 
-// use dotenv for secrets
-// https://www.npmjs.com/package/dotenv
+var logger = require('./utils/logger.js');
+var errorHandler = require('./middlewares/errorHandler.js');
+var json = require('./middlewares/json.js');
+var routes = require('./api/index.js');
+
+// use dotenv for secrets; https://www.npmjs.com/package/dotenv
 dotenv.config();
 
 var app = express();
 
 app.use(cors());
-app.use(morgan('tiny'));
-app.use(bodyParser.json());
-// extended : set to true for nested objects
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.json()); // middleware for post data
+app.use(helmet());
+app.use(morgan('tiny', { stream: logger.logStream }));
+app.use(errorHandler.bodyParser);
+app.use(json);
+app.use(express.urlencoded({ extended: true }));
+// app.use(express.json);
 
-// routes
-app.use(express.static(path.join(__dirname, 'routes')));
-var allRoutes = require('./routes/routeDefinations'); // all route definitions
-for (const [key, value] of Object.entries(allRoutes)) {
-	app.use('/api', value); // use all routes
-}
+// // routes
+// app.use(express.static(path.join(__dirname, 'routes')));
+// var allRoutes = require('./api/routeDefinations'); // all route definitions
+// for (const [key, value] of Object.entries(allRoutes)) {
+// 	app.use('/api', value); // use all routes
+// }
+
+// API Routes
+app.use('/api', routes());
 
 // test route :D
-app.get('/api/ping', (req, res) => {
+app.get('/ping', (req, res) => {
 	res.send('hi!!');
 });
 
