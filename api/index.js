@@ -2,11 +2,11 @@ var routes = {
 	v1: { genericRoute: require('./v1/routes/genericRoute.js') },
 };
 
+// WARNING: DO NOT TOUCH
 // guaranteed to get dependencies
 module.exports = () => {
 	const app = require('express').Router();
 
-	// WARNING: DO NOT TOUCH
 	// uses the format ip:port/api/v{n}/{route}/{method}
 
 	for (const [k0, v0] of Object.entries(routes)) {
