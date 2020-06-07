@@ -23,13 +23,6 @@ app.use(json);
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.json);
 
-// // routes
-// app.use(express.static(path.join(__dirname, 'routes')));
-// var allRoutes = require('./api/routeDefinations'); // all route definitions
-// for (const [key, value] of Object.entries(allRoutes)) {
-// 	app.use('/api', value); // use all routes
-// }
-
 // API Routes
 app.use('/api', routes());
 
