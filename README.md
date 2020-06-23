@@ -28,7 +28,9 @@ I found myself making this from scratch way too many times so here goes...
 
 # Usage
 
-    npm start
+    yarn start
+or
+    `npm start`
 
 To add new routes, add them in `api/index.js` as route definitions and add the
 controllers in `api/controllers`.  
