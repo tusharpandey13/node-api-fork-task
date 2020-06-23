@@ -1003,6 +1003,13 @@ isstream@0.1.x:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
+js-yaml@3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.8.2.tgz#02d3e2c0f6beab20248d412c352203827d786721"
+  integrity sha1-AtPiwPa+qyAkjUEsNSIDgn14ZyE=
+  dependencies:
+    argparse "^1.0.7"
+    esprima "^3.1.1"
 
 js-yaml@^3.14.0:
   version "3.14.0"
