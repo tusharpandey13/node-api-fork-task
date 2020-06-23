@@ -17,10 +17,14 @@ I found myself making this from scratch way too many times so here goes...
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [totoro-node](https://www.npmjs.com/package/totoro-node)
 
-# Installation
+# Installation (npm)
 
     git clone https://github.com/tusharpandey13/minimal-node-express-api-boilerplate.git && cd minimal-node-express-api-boilerplate
     npm install
+
+# Installation (yarn)
+    git clone https://github.com/tusharpandey13/minimal-node-express-api-boilerplate.git && cd minimal-node-express-api-boilerplate
+    yarn
 
 # Usage
 
