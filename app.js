@@ -1,9 +1,10 @@
-var path = require('path');
+// var path = require('path');
 var cors = require('cors');
 var morgan = require('morgan');
 var dotenv = require('dotenv');
 var helmet = require('helmet');
 var express = require('express');
+var totoro = require('totoro-node');
 
 var logger = require('./utils/logger.js');
 var errorHandler = require('./middlewares/errorHandler.js');
@@ -24,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(express.json);
 
 // API Routes
-app.use('/api', routes());
+app.use('/api', totoro.rain(routes));
 
 // test route :D
 app.get('/ping', (req, res) => {

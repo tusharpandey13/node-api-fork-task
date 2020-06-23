@@ -44,7 +44,7 @@ module.exports.methodNotAllowed = (req, res) => {
  * @param  {Function} next
  */
 module.exports.bodyParser = (err, req, res, next) => {
-	logger.error(err.message);
+	logger.log.error(err.message);
 
 	res.status(err.status).json({
 		error: {
@@ -63,8 +63,11 @@ module.exports.bodyParser = (err, req, res, next) => {
  * @param  {Function} next
  */
 module.exports.genericErrorHandler = (err, req, res, next) => {
-	logger.error(err.stack);
+	logger.log.error(err.stack);
+	// console.log(err.stack);
 	const error = buildError(err);
+	// const error = err;
 
 	res.status(error.code).json({ error });
+	// res.json({ error });
 };

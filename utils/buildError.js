@@ -6,7 +6,7 @@ var HttpStatus = require('http-status-codes');
  * @param   {Error} err
  * @returns {Object}
  */
-module.exports.buildError = (err) => {
+module.exports = (err) => {
 	// Validation errors
 	if (err.isJoi) {
 		return {
