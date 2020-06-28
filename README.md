@@ -1,4 +1,5 @@
-This api is capable of managing the execution of custom tasks using the child_process module of NodeJS.  
+## Introduction  
+This node api is capable of managing the execution of custom tasks using the `child_process` module of NodeJS.  
 It uses `fork()` to fork a new node process for each task.  
 It can then start, pause, resume and kill the task.  
 It can also send messages to and from the child process using IPC.  
@@ -19,6 +20,11 @@ the task outputs to stdout so it's output can also be viewed this way
 
 ## Routes  
 use `curl -i http://0.0.0.0:49160/api/v1/task/<routename>` to call an api route  
+  
+routes configuration is located in `./api/index.js`  
+the task files are located in `tasks/`  
+  
+  
 ### examples:  
 `curl -i http://0.0.0.0:49160/api/v1/task/echo` will print the string "echo" to stdout  
 `curl -i http://0.0.0.0:49160/api/v1/task/start` will start/resume the task  
