@@ -22,14 +22,8 @@ app.use(morgan('tiny', { stream: logger.logStream }));
 app.use(errorHandler.bodyParser);
 app.use(json);
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.json);
 
 // API Routes
-app.use('/api', totoro.rain(routes));
-
-// test route :D
-app.get('/ping', (req, res) => {
-	res.send('hi!!');
-});
+app.use('/api', totoro.rain(routes, logger.log));
 
 module.exports = app;

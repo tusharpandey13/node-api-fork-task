@@ -1,22 +1,32 @@
 const exampleController = require('./controllers/example');
 
+// simple adding of routes
+// routes definitions
+
 module.exports = {
 	v1: {
 		endpoints: [
 			{
-				route: '/metric/get-dummy',
+				// GET http://0.0.0.0:3000/api/v1/task/start will respond to this
+				route: '/task/start',
 				method: 'GET',
-				implementation: exampleController.get_dummy,
-				// active: true,
-				// deprecated: false,
+				implementation: exampleController.start,
 			},
-			// {
-			// 	route: '/another/test/endpoint',
-			// 	method: 'POST',
-			// 	implementation: anotherImplementationFunction,
-			// },
+			{
+				route: '/task/stop',
+				method: 'GET',
+				implementation: exampleController.stop,
+			},
+			{
+				route: '/task/kill',
+				method: 'GET',
+				implementation: exampleController.kill,
+			},
+			{
+				route: '/task/echo',
+				method: 'GET',
+				implementation: exampleController.echo,
+			},
 		],
-		// active: true,
-		// deprecated: false,
 	},
 };
