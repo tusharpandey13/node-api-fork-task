@@ -26,9 +26,13 @@ use `curl -i http://0.0.0.0:49160/api/v1/task/<routename>` to call an api route
     docker run -p 49160:3000 -d sol  
   
 use `docker ps` to get container-id  
-    curl -i http://0.0.0.0:49160/api/v1/task/start  
+  
+run `curl -i http://0.0.0.0:49160/api/v1/task/start` to start the task  
   
 wait for a few seconds, then run `curl -i http://0.0.0.0:49160/api/v1/task/stop`  
+  
 again run `curl -i http://0.0.0.0:49160/api/v1/task/start`  
+  
 now run `curl -i http://0.0.0.0:49160/api/v1/task/kill`  
+  
 observe the output in `docker logs <container-id>`
