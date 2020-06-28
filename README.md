@@ -21,7 +21,6 @@ use `curl -i http://0.0.0.0:49160/api/v1/task/<routename>` to call an api route
 `curl -i http://0.0.0.0:49160/api/v1/task/kill` will kill the task  
 
 ## Example usage:  
-run the following:
     git clone https://github.com/tusharpandey13/node-api-fork-task.git && cd node-api-fork-task  
     docker build -t sol .  
     docker run -p 49160:3000 -d sol  
