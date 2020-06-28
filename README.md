@@ -40,12 +40,12 @@ the task files are located in `tasks/`
   
 use `docker ps` to get container-id  
   
-run `curl -i http://0.0.0.0:49160/api/v1/task/start` to start the task  
+run `curl -i http://0.0.0.0:49160/api/v1/task/start` to start the execution of the task
   
-wait for a few seconds, then run `curl -i http://0.0.0.0:49160/api/v1/task/stop`  
+wait for a few seconds, then run `curl -i http://0.0.0.0:49160/api/v1/task/stop` to pause execution  
   
-again run `curl -i http://0.0.0.0:49160/api/v1/task/start`  
+again run `curl -i http://0.0.0.0:49160/api/v1/task/start` to resume execution  
   
-now run `curl -i http://0.0.0.0:49160/api/v1/task/kill`  
+now run `curl -i http://0.0.0.0:49160/api/v1/task/kill` to kill the task  
   
 observe the output in `docker logs <container-id>`
