@@ -1,4 +1,9 @@
-
+This api is capable of managing the execution of custom tasks using the child_process module of NodeJS.  
+It uses `fork()` to fork a new node process for each task.  
+It can then start, pause, resume and kill the task.  
+It can also send messages to and from the child process using IPC.  
+Custom environment variables can be passed to the children.  
+For more info, please look at the code.  
 
 ## Installation  
     git clone https://github.com/tusharpandey13/node-api-fork-task.git && cd node-api-fork-task
