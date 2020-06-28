@@ -7,7 +7,8 @@ Custom environment variables can be passed to the children.
 For more info, please look at the code.  
 
 ## Installation  
-    git clone https://github.com/tusharpandey13/node-api-fork-task.git && cd node-api-fork-task
+    git clone https://github.com/tusharpandey13/node-api-fork-task.git
+    cd node-api-fork-task
     docker build -t <name> .
 where `<name>` is the name of image
 
@@ -32,7 +33,8 @@ the task files are located in `tasks/`
 `curl -i http://0.0.0.0:49160/api/v1/task/kill` will kill the task  
 
 ## Example usage:  
-    git clone https://github.com/tusharpandey13/node-api-fork-task.git && cd node-api-fork-task  
+    git clone https://github.com/tusharpandey13/node-api-fork-task.git
+    cd node-api-fork-task  
     docker build -t sol .  
     docker run -p 49160:3000 -d sol  
   
