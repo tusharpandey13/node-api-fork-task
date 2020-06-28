@@ -12,7 +12,7 @@ use `docker logs <container-id>` to view console sdtdout
 the task outputs to stdout so it's output can also be viewed this way  
 
 ## routes  
-use `curl -i http://0.0.0.0:49160/api/v1/task/<routename>` to call an api route
+use `curl -i http://0.0.0.0:49160/api/v1/task/<routename>` to call an api route  
 examples:  
 `curl -i http://0.0.0.0:49160/api/v1/task/echo` will print the string "echo" to stdout  
 `curl -i http://0.0.0.0:49160/api/v1/task/start` will start/resume the task  
