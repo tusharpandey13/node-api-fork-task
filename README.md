@@ -1,3 +1,5 @@
+A simple NodeJS project to distribute processing tasks to multiple async child processes, using fork().  
+
 ## Introduction  
 This node api is capable of managing the execution of custom tasks using the `child_process` module of NodeJS.  
 It uses `fork()` to fork a new node process for each task.  
